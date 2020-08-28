@@ -1,0 +1,27 @@
+﻿body {
+    background-color:lightseagreen;
+}
+.button{
+    font-family:Calibri,sans-serif;
+    display:block;
+    background-color:green;
+    width:30%;
+    border:none;
+    padding:12px 24px;
+    color:white;
+    font-size:20px;
+    text-align:center;
+}
+
+.button:hover{
+    background-color:#ddd;
+    color:black;
+}
+.center{
+    margin:auto;
+    width:50%;
+    border:3px blue;
+    padd
+        
+        ing:10px;
+}
