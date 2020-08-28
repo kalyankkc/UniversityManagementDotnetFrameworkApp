@@ -1,0 +1,106 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "AddBussinessCard";
+}
+<h2>AddBussinessCard</h2>
+
+<div class="container">
+    <br><br>
+    <div class="col-lg-8 m-auto d-block">
+        <form action="AddBussinessCardDetails" method="post">
+
+            <div class="form-group">
+                <label for="user">Name:</label>
+                <input type="text" id="Name" name="Name" class="form-control">
+                <h5 id="Usercheck"></h5>
+            </div>
+            <div class="form-group">
+                <label for="user">Phone_no:</label>
+                <input type="text" id="Phone_no" name="Phone_no" class="form-control">
+                <h5 id="Phone_nocheck"></h5>
+            </div>
+
+            <div class="form-group">
+                <label for="user">Email_Id:</label>
+                <input type="text" id="Email_Id" name="Email_Id" class="form-control">
+                <h5 id="Emailcheck"></h5>
+            </div>
+            Location_Id:<select name="Location_Id">
+                @foreach (var item in Model.locationList)
+                {
+                    <option value=@item.Location_Id>@item.Location_Name</option>
+                }
+            </select><br><br />
+
+            Bussiness_Type:<select name="Bussiness_Type">
+                <option>IT service</option>
+                <option>Testing</option>
+                <option>Development</option>
+            </select><br><br />
+
+            Competency:<select name="Competency">
+                <option>C1</option>
+                <option>C2</option>
+                <option>C3</option>
+            </select><br><br />
+            <div class="form-group">
+                <label for="user">Designation: </label>
+                <input type="text" id="Designation" name="Designation" class="form-control">
+                <h5 id="Designation_nocheck"></h5>
+            </div>
+            No_of_cards:<select name="No_of_cards">
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+                <option>125</option>
+            </select><br><br />
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" id="submitbtn" name="" value="Add Bussiness Card">
+            </div>
+
+        </form>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        $('#usercheck').hide();
+
+
+        var user_err = true;
+
+
+        $('#usercheck').keyup(function () {
+            username_check();
+        });
+
+        function username_check() {
+            var user_val = $('#Name').val();
+            if (user_val.length == '') {
+                $('#usercheck').show();
+                $('#usercheck').html("**please fill the username");
+                $('#usercheck').focus();
+                $('#usercheck').css("color", "red");
+                user_err = false;
+                return false;
+            }
+            else {
+                $('#usercheck').hide();
+            }
+            if ((user_val.length < 6) || (user_val.length > 12)) {
+                $('#usercheck').show();
+                $('#usercheck').html("**Username length must be between 6 and 12");
+                $('#usercheck').focus();
+                $('#usercheck').css("color", "red");
+                user_err = false;
+                return false;
+            }
+            else {
+                $('#usercheck').hide();
+            }
+        }
+
+</script>

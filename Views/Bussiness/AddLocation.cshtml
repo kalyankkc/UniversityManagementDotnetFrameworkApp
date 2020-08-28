@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "AddLocation";
+}
+
+<h2>AddLocation</h2>
+
+<div class="container">
+    <br><br>
+    <div class="col-lg-8 m-auto d-block">
+        <form action="AddLocationDetails" method="post">
+
+            <div class="form-group">
+                <label for="user">Location_Id: </label>
+                <input type="text" id="Location_Id" name="Location_Id" class="form-control">
+                <h5 id="Location_Idcheck"></h5>
+            </div>
+
+            <div class="form-group">
+                <label for="user">LocationName: </label>
+                <input type="text" id="LocationName" name="LocationName" class="form-control">
+                <h5 id="LocationNamecheck"></h5>
+            </div>
+            <div class="form-group">
+                <label for="user">Address: </label>
+                <input type="text" id=" Address" name="Address" class="form-control">
+                <h5 id=" Addresscheck"></h5>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" id="submitbtn" name="" value="Add Location">
+            </div>
+
+        </form>
+    </div>
+</div>
